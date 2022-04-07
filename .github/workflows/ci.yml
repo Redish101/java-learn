@@ -16,3 +16,10 @@ jobs:
           maven-version: 3.8.2
       - name: Build
         run: mvn install && mvn clean package
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push to cdn
+        uses: ptienchuan/deploy-github-pages-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
