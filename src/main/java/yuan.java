@@ -1,13 +1,26 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class yuan {
     public static void main(String[] args) {
-        final double pi = 3.14;
-        Scanner input = new Scanner(System.in);
-        System.out.print("输入圆柱体的h:");
-        double h = input.nextDouble();
-        System.out.print("输入圆柱体底面的r：");
-        double r = input.nextDouble();
-        System.out.printf("圆柱体的表面积为：%.2f%n", 2*pi*r*h+pi*r*r*2);
+        Random random = new Random();
+        int q = random.nextInt(100);
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入你要猜的数");
+        while (true) {
+            int a = in.nextInt();
+            if (a == q) {
+                System.out.println("恭喜你,猜对了！");
+                break;
+            }
+            else {
+                if (a > q) {
+                    System.out.println("猜大了");
+                }
+                else {
+                    System.out.println("猜小了");
+                }
+            }
+        }
     }
 }
